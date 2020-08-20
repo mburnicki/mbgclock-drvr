@@ -1,0 +1,19 @@
+# Editor configuration file
+# https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# General stype
+[*]
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Source code indentation using spaces
+[*.{c,cpp,h}]
+indent_style = space
+indent_size = 2
+
+# Tab indentation for makefiles
+[Makefile]
+indent_style = tab
