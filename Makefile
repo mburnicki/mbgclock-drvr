@@ -38,3 +38,9 @@ $(MODULE)-objs := $(MODULE_OBJS) $(MBGLIB_OBJS_COMMON) $(MBGLIB_OBJS_LINUX)
 
 endif
 
+# This is a hack that prevents the kernel build system from
+# being called to 'install' the kernel.
+.PHONY: install
+install:
+	@echo "Calling 'make modules_install' to install"
+	$(MAKE) -C $(BUILD_DIR) M=$(CURDIR) EXTRA_CFLAGS="$(EXTRA_CFLAGS)" modules_install
